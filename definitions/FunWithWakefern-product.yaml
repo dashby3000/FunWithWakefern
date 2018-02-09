@@ -1,20 +1,19 @@
-product: '1.0.0'
-
+product: 1.0.0
 info:
   name: funwithwakefern
   title: FunWithWakefern
-  version: "1.0.0"
-
+  version: 1.0.0
+  contact:
+    name: Dennis Ashby
+    email: dennis.ashby@us.ibm.com
 apis:
-  'funwithwakefern':
+  funwithwakefern:
     $ref: FunWithWakefern.yaml
-
 visibility:
   view:
     type: public
   subscribe:
     type: authenticated
-
 plans:
   default:
     title: Default Plan

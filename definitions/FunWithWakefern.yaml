@@ -418,6 +418,10 @@ info:
   x-ibm-name: funwithwakefern
   version: 1.0.0
   title: FunWithWakefern
+  contact:
+    url: 'http://funwithwakefernapi.mybluemix.net'
+    name: Dennis Ashby
+    email: dennis.ashby@us.ibm.com
 schemes:
   - https
 host: $(catalog.host)
@@ -449,7 +453,25 @@ x-ibm-configuration:
     sb:
       properties:
         runtime-url: 'http://localhost:4001'
+    funwithwakefern:
+      properties:
+        runtime-url: 'http://funwithwakefernapi.mybluemix.net'
+        invoke-tls-profile: 'client:Loopback-client'
   assembly:
     execute:
+      - set-variable:
+          title: set-variable
+          actions:
+            - value: f84hN8fhdncv9fjD
+              add: message.headers.x-app-sharedsecret
+          version: 1.0.0
+          description: Sets a header value only known to the API.  If this header is not present the API will reject the call with a 401 error
       - invoke:
           target-url: $(runtime-url)$(request.path)$(request.search)
+          tls-profile: $(invoke-tls-profile)
+      - activity-log:
+          title: activity-log
+          content: activity
+          error-content: payload
+          version: 1.0.0
+  phase: realized

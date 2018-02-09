@@ -2,8 +2,8 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
-var dash = require('appmetrics-dash');
-dash.attach({title: 'FunWithWakefern API NodeJS Metrics Dashboard'});
+//var dash = require('appmetrics-dash');
+//dash.attach({title: 'FunWithWakefern API NodeJS Metrics Dashboard'});
 
 var app = module.exports = loopback();
 
