@@ -1,0 +1,12 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "cloudantDB": {
+    "database": "wakefern_test",
+    "name": "cloudantDB",
+    "modelIndex": "",
+    "connector": "cloudant"
+  }
+}

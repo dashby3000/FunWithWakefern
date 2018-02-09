@@ -1,0 +1,15 @@
+{
+  "initial": {
+    "./middleware/secret-header": {
+      "enabled": false
+    }
+  },
+  "final:after": {
+    "strong-error-handler": {
+      "params": {
+        "debug": false,
+        "log": false
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "uiDirs": "server/explorer",
+    "apiInfo": {
+      "title": "{'welcome': 'YoWhatsThat APIs', 'node_env': 'production'}",
+      "description": "APIs to support the YoWhatsThat App"
+    }
+  }
+}
