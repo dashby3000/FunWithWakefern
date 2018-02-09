@@ -22,7 +22,9 @@ paths:
     put:
       tags:
         - Rating
-      summary: Patch an existing model instance or insert a new one into the data source.
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
       operationId: Rating.upsert__put_Ratings
       parameters:
         - name: data
@@ -41,7 +43,9 @@ paths:
     patch:
       tags:
         - Rating
-      summary: Patch an existing model instance or insert a new one into the data source.
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
       operationId: Rating.upsert__patch_Ratings
       parameters:
         - name: data
@@ -65,7 +69,9 @@ paths:
       parameters:
         - name: filter
           in: query
-          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({"something":"value"})'
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
           required: false
           type: string
           format: JSON
@@ -81,7 +87,9 @@ paths:
     post:
       tags:
         - Rating
-      summary: Replace an existing model instance or insert a new one into the data source.
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
       operationId: Rating.replaceOrCreate
       parameters:
         - name: data
@@ -101,7 +109,9 @@ paths:
     post:
       tags:
         - Rating
-      summary: Update an existing model instance or insert a new one into the data source based on the where criteria.
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
       operationId: Rating.upsertWithWhere
       parameters:
         - name: where
@@ -181,7 +191,9 @@ paths:
           format: JSON
         - name: filter
           in: query
-          description: 'Filter defining fields and include - must be a JSON-encoded string ({"something":"value"})'
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
           required: false
           type: string
           format: JSON
@@ -212,7 +224,9 @@ paths:
     put:
       tags:
         - Rating
-      summary: Patch attributes for a model instance and persist it into the data source.
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
       operationId: 'Rating.prototype.updateAttributes__put_Ratings_{id}'
       parameters:
         - name: data
@@ -237,7 +251,9 @@ paths:
     patch:
       tags:
         - Rating
-      summary: Patch attributes for a model instance and persist it into the data source.
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
       operationId: 'Rating.prototype.updateAttributes__patch_Ratings_{id}'
       parameters:
         - name: data
@@ -263,7 +279,9 @@ paths:
     post:
       tags:
         - Rating
-      summary: Replace attributes for a model instance and persist it into the data source.
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
       operationId: Rating.replaceById
       parameters:
         - name: id
@@ -294,7 +312,9 @@ paths:
       parameters:
         - name: filter
           in: query
-          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({"something":"value"})'
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
           required: false
           type: string
           format: JSON
@@ -387,7 +407,9 @@ paths:
       parameters:
         - name: filter
           in: query
-          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({"something":"value"})'
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
           required: false
           type: string
           format: JSON
@@ -455,7 +477,7 @@ x-ibm-configuration:
         runtime-url: 'http://localhost:4001'
     funwithwakefern:
       properties:
-        runtime-url: 'http://funwithwakefernapi.mybluemix.net'
+        runtime-url: 'https://funwithwakefernapi.mybluemix.net'
         invoke-tls-profile: 'client:Loopback-client'
   assembly:
     execute:
@@ -465,7 +487,9 @@ x-ibm-configuration:
             - value: f84hN8fhdncv9fjD
               add: message.headers.x-app-sharedsecret
           version: 1.0.0
-          description: Sets a header value only known to the API.  If this header is not present the API will reject the call with a 401 error
+          description: >-
+            Sets a header value only known to the API.  If this header is not
+            present the API will reject the call with a 401 error
       - invoke:
           target-url: $(runtime-url)$(request.path)$(request.search)
           tls-profile: $(invoke-tls-profile)
@@ -474,4 +498,14 @@ x-ibm-configuration:
           content: activity
           error-content: payload
           version: 1.0.0
-  phase: realized
+    catch: []
+  gateway: datapower-gateway
+  properties:
+    runtime-url:
+      value: ''
+      description: ''
+      encoded: false
+    invoke-tls-profile:
+      value: ''
+      description: ''
+      encoded: false
